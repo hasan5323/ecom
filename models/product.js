@@ -28,12 +28,11 @@ module.exports = class Product {
   save() {
     getProductsFromFile(products => {
       products.push(this);
-      fs.writeFile(p, JSON.stringify(products), err => {
+      fs.writeFile(p, JSON.stringify(products, null, 4),'utf-8', err => {
         console.log(err);
       });
     });
   }
-
   static fetchAll(cb) {
     getProductsFromFile(cb);
   }
