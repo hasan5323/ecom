@@ -9,6 +9,7 @@ app.set('views', 'views');
 //express middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
+app.use(express.json())
 
 //routes and controllers import
 const errorController = require('./controllers/error');
