@@ -17,7 +17,7 @@ const getProductsFromFile = cb => {
   });
 };
 
-module.exports = class Product {
+module.exports = class Chart {
   constructor(title, imageUrl, description, price) {
     this.title = title;
     this.imageUrl = imageUrl;
@@ -33,7 +33,7 @@ module.exports = class Product {
       });
     });
   }
-  static fetchAll(cb) {
+  static fetchChart(cb) {
     getProductsFromFile(cb);
   }
 };

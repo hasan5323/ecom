@@ -1,4 +1,6 @@
 const Product = require('../models/product');
+const Chart = require('../models/charted');
+
 
 exports.getProducts = (req, res, next) => {
   Product.fetchAll(products => {
@@ -9,24 +11,15 @@ exports.getProducts = (req, res, next) => {
     });
   });
 };
-
-exports.getIndex = (req, res, next) => {
-  res.redirect('/products')
-  // Product.fetchAll(products => {
-  //   res.render('shop/index', {
-  //     prods: products,
-  //     pageTitle: 'Shop',
-  //     path: '/'
-  //   });
-  // });
-};
+Chart
 
 exports.getCart = (req, res, next) => {
-  
-  res.render('shop/cart', {
-    prods: charts,
-    path: '/cart',
-    pageTitle: 'Your Cart'
+  Chart.fetchAll(products => {
+    res.render('shop/cart', {
+      prods: products,
+      pageTitle: 'Your Cart',
+      path: '/cart'
+    });
   });
 };
 
