@@ -7,25 +7,24 @@ exports.getProducts = (req, res, next) => {
     res.render('shop/product-list', {
       prods: products,
       pageTitle: 'All Products',
-      path: '/products'
+      path: '/shop/products'
     });
   });
 };
-Chart
 
 exports.getCart = (req, res, next) => {
   Chart.fetchAll(products => {
     res.render('shop/cart', {
       prods: products,
       pageTitle: 'Your Cart',
-      path: '/cart'
+      path: '/shop/cart'
     });
   });
 };
 
 exports.getCheckout = (req, res, next) => {
   res.render('shop/checkout', {
-    path: '/checkout',
+    path: '/shop/checkout',
     pageTitle: 'Checkout'
   });
 };

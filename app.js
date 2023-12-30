@@ -12,13 +12,13 @@ app.use(express.static('public'));
 app.use(express.json())
 
 //routes and controllers import
-const errorController = require('./controllers/error');
+const errorController = require('./middlewares/errorHandler.js');
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
 // routes
 app.use('/admin', adminRoutes);
-app.use(shopRoutes);
+app.use('/shop',shopRoutes);
 app.use(errorController.get404);
 
 // listener
